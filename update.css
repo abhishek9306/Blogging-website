@@ -1,0 +1,124 @@
+     body{
+             margin:0;
+             padding:0;
+             background:#f9d342;
+        }
+        .box{
+        	position: absolute;
+        	top: 25%;
+        	left: 830px;
+        	transform: translate(-50%-50%);
+        	width: 600px;
+        	padding: 40px;
+        	height: 600px;
+        	background: rgba(0,0,0,.5);
+        	box-sizing: border-box;
+        	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+        	border-radius: 10px;
+        }
+
+        .box h2{
+          margin: 0 0 30px;
+          padding: 0;
+          color: #fff;
+          text-align: center;
+        }
+        .box .inputbox
+        {
+        	position: relative;
+        }
+
+        .box .inputbox input
+        {
+        	width: 100%;
+        	padding: 20px 0;
+        	font-size: 20px;
+        	color: #fff;
+        	margin-bottom: 20px;
+        	border:none;
+        	border-bottom: 1px solid #fff;
+        	outline: none;
+            background: transparent;
+        }
+        .box .inputbox label
+        {
+        	position: absolute;
+        	top:0;
+        	left: 0;
+        	color: white;
+        	pointer-events: none;
+        	transition: .5s;
+        }
+
+        .box .inputbox input:focus~label,
+        .box .inputbox input:valid~label
+        {
+        	top:-5;
+        	left: 0;
+        	color: #03a9f4;
+        	font-size:12px;
+        }
+
+        .box input[type="submit"]
+        {
+        	background:transparent;
+        	border:none;
+        	outline: none;
+        	color: #fff;
+        	float: right;
+        	background:#03a9f4;
+        	padding: 10px 20px;
+        	cursor: pointer;
+        	border-radius: 5px;
+        }
+
+         .box .inputbox1
+         {
+         	width: 100%;
+        	padding: 0px 0;
+        	font-size: 10px;
+        	color: #fff;
+        	margin-bottom: 20px;
+        	border:none;
+        	border-bottom: 1px solid #fff;
+        	outline: none;
+            background: transparent;
+        }
+
+        .box .inputbox2
+        {
+        	background: transparent;
+        	border-radius: 5px;
+        	cursor: pointer;
+        	padding: 8px;
+        	color:white;
+        }
+
+        .box .inputbox2 option
+        {
+        	background: rgba(0,0,0,.8);
+        }
+
+        .inputbox3
+        {
+        	background:transparent;
+        	border:none;
+        	outline: none;
+        	color: #fff;
+        	background:rgba(0,0,0,.8);
+        	padding: 10px 20px;
+        	cursor: pointer;
+        	border-radius: 5px;
+        	margin-right: 40px;
+        	margin-top: 20px;
+        	text-orientation: none;
+        	float: right;
+        	text-decoration: none;
+        }
+
+        .box .i
+        {
+        	margin: 10px;
+        	color:white;
+        }
+

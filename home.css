@@ -1,0 +1,120 @@
+*{
+  box-sizing: border-box;
+}
+
+ body{
+    background-color:#292826
+	max-height: 1200px;
+	}
+
+
+.header{
+		background-color:#f9d342;
+	    border: 2px solid #123;
+    	border-radius:10px;
+        padding: 30px;
+        text-align:  center;
+        font-size: 40px;
+		}
+
+.navbar {
+  overflow: hidden;
+  background-color:#f9d342;
+  border-radius:10px;
+  font-family: Arial;
+  margin:10px;
+  padding:10px;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 30px;
+  color: #292826;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+
+
+
+.navbar a:hover, .dropdown:hover .dropbtn
+ {
+  background-color:#2379;
+  border-radius:10px;
+}
+
+
+
+.fakeimg {
+  max-width: 100px;
+  max-height:500px;
+  padding: 0px;
+  border:2px solid #123;
+
+}
+
+.card
+{
+background:#f9d342;
+border-radius:10px;
+padding:10px;
+margin:20px;
+width:1200px;
+height:400px;
+
+}
+
+
+.row{
+  float:right;
+  width:550px;
+  height:600px;
+  margin-right:25px;
+  border:2px solid #123;
+  border-radius:10px;
+  background:#f9d342;
+  padding:10px;
+  font-size:60px;
+  text-align:center;
+}
+
+.row .row1{
+text-align:center;
+margin:10px;
+font-size:40px;
+padding:10px;
+color:#292826;
+}
+
+
+
+
+
+.sr input{
+  padding:10px;
+  border-radius:10px;
+  border: 2px solid #123;
+  background:rgba(0,0,0,.8);
+  color:#f9d342;
+}
+
+
+.sr input[type="submit"]
+{
+background:#292826;
+color:#f9d342;
+}
+
+.sr input[type="submit"]:hover
+{
+background:#292826;
+color:#f9d342;
+cursor:pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
