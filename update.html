@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update blog</title>
+    <link rel="stylesheet"  href="{{url_for('static',filename='css/update.css')}}">
+</head>
+<a href="/logout" class="inputbox3" type="submit" value="logout"/>logout</a>
+
+<a class="inputbox3" href="/">home</a>
+<div class="box" >
+     <h2>Add new post</h2>
+    <form action="{{url_for('addrec')}}" method="post">
+    <div class="inputbox"><input type="text" name="title" required="" /><label>TITLE</label></div>
+    <div class="inputbox"><input type="text" name="image" required=""><label>IMAGE</label></div>
+    <div class="inputbox"><input type="text" name="urls"`><label>URLS</label></div>
+    <div><textarea class="inputbox1" rows="2" cols="50" name="content" placeholder="Add detail content" required=""></textarea></div>
+       <div><select class="inputbox2" name="Panda">
+           <option value="Entertainment">Entertainment</option>
+           <option value="Technology">technology</option>
+           <option value="Facts and Figures">facts and figures</option>
+           <option value="Sports">sports</option>
+           <option value="Movies">movies</option>
+           <option value="Other">other</option>
+       </select></div>
+       <input class="inputbox" type="submit" value="submit"/>
+       <div class="i">{{msg}}</div>
+    </form>
+    </div>
+</body>
+</html>

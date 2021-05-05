@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>techblog</title>
+    <link rel="stylesheet"  href="{{url_for('static',filename='css/home.css')}}">
+    <style>
+          body {font-family: Arial, Helvetica, sans-serif;
+              background-color:#292826
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #292826;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+
+.close {
+  color: #292826;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #292826;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 16px 156px;
+  background-color: #f9d342;
+  color: #292826;
+}
+
+.modal-body {color:#292826; padding: 16px 156px;}
+.modal-body input[type="submit"]{
+            margin:5px;
+            background:transparent;
+        	border:none;
+        	outline: none;
+        	color: #292826;
+            width:10%;
+        	background:#f9d342;
+        	padding: 10px 10px;
+        	cursor: pointer;
+        	border-radius: 5px;}
+.modal-footer {
+  padding: 16px 156px;
+  background-color: #f9d342;
+  color: #292826;
+}
+
+.inputbox input{
+margin:3px;
+padding:15px;
+width:25%;
+border-radius:10px;
+
+}
+
+.inputbox label{
+color:#f9d342
+
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+</style>
+</head>
+<body>
+<div class="header"><h2>Techblog</h2></div>
+
+<div class="navbar">
+      <a href="/">Home</a>
+<!--      <div class="navbar" style="float:right;"><button id="myBtn" style="background:#f9d342; font-size:30px;">Update</button></div>-->
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="close">&times;</span>
+                                    <h1>login first</h1>
+                                </div>
+                                <div class="modal-body">
+<!--                                    <form action="/validate" method="post">-->
+<!--                                        <div class="inputbox">-->
+<!--                                            <input type="email" name="nm" >-->
+<!--                                            <label for="email">email</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="inputbox">-->
+<!--                                            <input type="password" name="pass" required="">-->
+<!--                                            <label for="password">Password</label>-->
+<!--                                        </div>-->
+<!--                                        <input type="submit" name="" value="Submit">-->
+<!--                                    </form>-->
+                                </div>
+                                <div class="modal-footer">
+                                    <h2>Enter id and password before update</h2>
+                                </div>
+                            </div>
+                        </div>
+     <div  style="float: right;" class="navbar">
+         <form action="/search" method="post">
+             <div class="sr">
+                 <input class="searchTxt" type="text" placeholder="Search" name="searchTxt">
+                 <input type="submit" value="search" name=""></div>
+         </form>
+     </div>
+ </div>
+
+     <div class="row">
+         TAGS
+         <div class="row1"><a style="text-decoration:none; color:#292826;" href="/tag/Entertainment"> Entertainment </a><br/></div>
+         <div class="row1"><a style="text-decoration:none; color:#292826;" href="/tag/Technology"> Technology </a><br/></div>
+         <div class="row1"><a style="text-decoration:none; color:#292826;" href="/tag/Facts and Figures"> Facts and Figures </a><br/></div>
+         <div class="row1"><a style="text-decoration:none; color:#292826;" href="/tag/Movies"> Movies </a><br/></div>
+         <div class="row1"><a style="text-decoration:none; color:#292826;" href="/tag/Sports"> Sports </a><br/></div>
+         <div class="row1"><a style="text-decoration:none; color:#292826;" href="/tag/Other"> Other </a><br/></div>
+     </div>
+
+        {% for row in rows %}
+        <div class="card">
+
+             <a href="/blog/{{row[0]}}" ><h1>{{ row[1]}}</h1></a>
+                         <a href="/blog/{{row[0]}}" ><img style="width:250px; height:250px;" src="{{ row[2] }}"></a>
+
+
+<!--            <a href="  {{ row[3]}}">read more</a>-->
+<!--            <p>{{ row[4] }}</p>-->
+<!--            {{row[5]}}-->
+            {% if 'email' in session %}
+            <a href="/delete/{{row[0]}}">delete post</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+
+
+      <script>// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}</script>
+</body>
+</html>
